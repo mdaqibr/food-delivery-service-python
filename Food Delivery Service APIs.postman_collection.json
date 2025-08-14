@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "b7aa7061-15e8-48ba-8d16-c3809e8e1c78",
+		"name": "Food Delivery Service APIs",
+		"description": "Postman collection for Food Delivery Service assignment APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24352634"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sarthak Singh\",\n    \"mobile\": \"9999999993\",\n    \"email\": \"Sarthak@example.com\",\n    \"user_type\": \"customer\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Delivery Agent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Delivery Guy\",\n    \"mobile\": \"8888888888\",\n    \"email\": \"delivery_guy@example.com\",\n    \"user_type\": \"delivery_agent\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dominos\",\n    \"location\": \"Bangalore\",\n    \"rating\": 4.5\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/restaurants",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": 1,\n    \"restaurant\": 1,\n    \"total_price\": 500,\n    \"items\": [\n        {\"item_name\": \"Burger\", \"price\": 200, \"quantity\": 2},\n        {\"item_name\": \"Fries\", \"price\": 100, \"quantity\": 1}\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/place-order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"place-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/order-history/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order-history",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"in_transit\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Delivered",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order_id\": 1\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/mark-delivered",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"mark-delivered"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurant Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/restaurants/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"restaurants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

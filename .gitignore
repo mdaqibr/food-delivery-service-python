@@ -1,0 +1,32 @@
+
+---
+
+## 📄 .gitignore
+
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+venv
+env
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
